@@ -69,4 +69,4 @@ if __name__ == "__main__":
 
         result = componentsInGraph(n, m, gb, index)
 
-        print(result)
+        print(*result, sep=' ')
