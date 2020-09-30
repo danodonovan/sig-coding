@@ -33,7 +33,7 @@ def componentsInGraph(n, m, gb, index):
 
 def bfs_distance(graph, start_node, final_node):
     # bfs
-    q = queue.Queue()
+    q = queue.SimpleQueue()
     discovered = set()
     level = {}
 
