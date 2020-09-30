@@ -1,4 +1,3 @@
-from collections import defaultdict
 import queue
 
 
@@ -6,10 +5,14 @@ def componentsInGraph(n, m, gb, index):
     # print(f'n = {n}')
     # print(f'm = {m}')
 
-    graph = defaultdict(set)
+    graph = {
+        node + 1: set()
+        for node in range(n)
+    }
 
     for head, tail in gb:
         graph[head].add(tail)
+        graph[tail].add(head)
 
     distances = [
         bfs_distance(graph, start_node=index, final_node=node)
