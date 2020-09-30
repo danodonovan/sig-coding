@@ -21,7 +21,7 @@ def componentsInGraph(n, m, gb, index):
     ]
 
     def _mult_dist(distance):
-        if distance == 0:
+        if distance == -1:
             return -1
         else:
             return distance * 6
@@ -43,7 +43,7 @@ def bfs_distance(graph, start_node, final_node):
 
     while not q.empty():
         v = q.get()
-        if v is final_node:
+        if v == final_node:
             return level[v]
 
         for next_node in graph[v]:
@@ -52,7 +52,7 @@ def bfs_distance(graph, start_node, final_node):
                 level[next_node] = level[v] + 1
                 q.put(next_node)
 
-    return 0
+    return -1
 
 
 if __name__ == "__main__":
